@@ -24,10 +24,10 @@ pipeline {
          stage('Build docker image') {
             steps {
                 
-                sh "docker build -t mavenwebapp ."
+                sh "docker build -t maventestrepo ."
             }
         }
-        stage('push docker image') {
+        stage('push docker image to Ecr') {
             steps {
                 sh "aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 490167669940.dkr.ecr.ap-southeast-1.amazonaws.com"
                 sh "docker tag maventestrepo:latest 490167669940.dkr.ecr.ap-southeast-1.amazonaws.com/maventestrepo:latest"
