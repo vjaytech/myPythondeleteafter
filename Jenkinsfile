@@ -21,7 +21,7 @@ pipeline {
             }
         }
          
-         stage('Build image ') {
+         stage('docker image') {
             steps {
                 
                 sh "docker build -t mavenwebapp ."
