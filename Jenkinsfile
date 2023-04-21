@@ -15,19 +15,19 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/vjtechie/mavenwebappsandbox.git'
             }
         }
-        stage('Build') {
+        stage('Build packages') {
             steps {
                 sh "mvn clean package"
             }
         }
          
-         stage('docker image') {
+         stage('Build docker image') {
             steps {
                 
                 sh "docker build -t mavenwebapp ."
             }
         }
-        stage('Build') {
+        stage('push docker image') {
             steps {
                 sh "aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 490167669940.dkr.ecr.ap-southeast-1.amazonaws.com"
                 sh "docker tag maventestrepo:latest 490167669940.dkr.ecr.ap-southeast-1.amazonaws.com/maventestrepo:latest"
