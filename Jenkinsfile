@@ -23,10 +23,10 @@ pipeline {
          
          stage('Build  image and push to ECR') {
             steps {
-                sh "aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 490167669940.dkr.ecr.ap-southeast-1.amazonaws.com"
+                sh "aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin xxxxxxxxxxx.dkr.ecr.ap-southeast-1.amazonaws.com"
                 sh "docker build -t maventestrepo ."
-                sh "docker tag maventestrepo:latest 490167669940.dkr.ecr.ap-southeast-1.amazonaws.com/maventestrepo:latest"
-                sh "docker push 490167669940.dkr.ecr.ap-southeast-1.amazonaws.com/maventestrepo:latest"
+                sh "docker tag maventestrepo:latest xxxxxxxxxx.dkr.ecr.ap-southeast-1.amazonaws.com/maventestrepo:latest"
+                sh "docker push xxxxxxxxxx.dkr.ecr.ap-southeast-1.amazonaws.com/maventestrepo:latest"
             }
         }
         
