@@ -1,12 +1,12 @@
 pipeline {
     agent any
     environment {
-        AWS_ACCOUNT_ID='361703069140'
+        AWS_ACCOUNT_ID='xxxxxxxx'
         AWS_DEFAULT_REGION='ap-southeast-1'
         IMAGE_REPO_NAME='maventestrepo'
-        REPOSITORY_URI = '361703069140.dkr.ecr.ap-south-1.amazonaws.com/mavenwebapp'
-        AWS_ACCESS_KEY_ID = "AKIAXEICFCS2GN56V566"
-       AWS_SECRET_ACCESS_KEY = "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"
+        REPOSITORY_URI = 'xxxxxxxxxxx.dkr.ecr.ap-south-1.amazonaws.com/mavenwebapp'
+        AWS_ACCESS_KEY_ID = "xxxxxxxxxx"
+       AWS_SECRET_ACCESS_KEY = "xxxxxxxxxxxxxx"
   }
 
     stages {
